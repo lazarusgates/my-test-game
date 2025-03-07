@@ -1,0 +1,10 @@
+res://battle_menu.tscn
+res://ui_menu_select.gd
+res://walk_player.tscn
+res://test_tile_map.tscn
+res://test_scene.tscn
+res://battle_test.tscn
+res://battle_menu.tres
+res://attack_ui.tscn
+res://battle_menu.gd
+res://attack_ui.gd

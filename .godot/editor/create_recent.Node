@@ -1,0 +1,14 @@
+Panel
+Control
+Button
+HBoxContainer
+Label
+VBoxContainer
+MarginContainer
+ColorRect
+AnimationPlayer
+Sprite2D
+Marker2D
+Container
+AnimatedSprite2D
+Camera2D

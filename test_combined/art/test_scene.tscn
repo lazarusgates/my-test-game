@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://va8anffiib8n"]
+
+[ext_resource type="PackedScene" uid="uid://b41s3h8dvkfun" path="res://test_tile_map.tscn" id="1_2re5j"]
+[ext_resource type="PackedScene" uid="uid://dh4aroaw0j4ke" path="res://walk_player.tscn" id="2_l3c2u"]
+
+[node name="test_scene" type="Node2D"]
+
+[node name="testTileMap" parent="." instance=ExtResource("1_2re5j")]
+
+[node name="walk_player" parent="." instance=ExtResource("2_l3c2u")]
+position = Vector2(49, 68)
