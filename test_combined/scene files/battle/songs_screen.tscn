@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gjy1trqd2we2"]
 
-[ext_resource type="Script" path="res://scripts/battle/songs_screen.gd" id="1_li5c1"]
+[ext_resource type="Script" uid="uid://djr7jsaoukvdc" path="res://scripts/battle/songs_screen.gd" id="1_li5c1"]
 
 [node name="songs_screen" type="Control"]
 layout_mode = 3

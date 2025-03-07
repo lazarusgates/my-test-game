@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://l0v0sqkmsqy"]
 
-[ext_resource type="Texture2D" uid="uid://lenrp84pj8gj" path="res://art/man idk.png" id="1_y3u7b"]
+[ext_resource type="Texture2D" uid="uid://br1pqn64vll22" path="res://sprite/battleMenuSelect.png" id="1_5msop"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37lew"]
-texture = ExtResource("1_y3u7b")
+texture = ExtResource("1_5msop")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 

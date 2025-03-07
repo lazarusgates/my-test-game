@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6rbn3nbp3jgy"]
 
-[ext_resource type="Script" path="res://scripts/battle/battle_menu.gd" id="1_7j18s"]
+[ext_resource type="Script" uid="uid://72ajyty6hc0g" path="res://scripts/battle/battle_menu.gd" id="1_7j18s"]
 [ext_resource type="Theme" uid="uid://l0v0sqkmsqy" path="res://art/button_theme.tres" id="2_jdoa2"]
 [ext_resource type="PackedScene" uid="uid://cayi8nigudrlo" path="res://scene files/battle/attack_screen.tscn" id="3_37lew"]
-[ext_resource type="Script" path="res://scripts/battle/battle_choices.gd" id="3_idued"]
+[ext_resource type="Script" uid="uid://t0mjkbqj455r" path="res://scripts/battle/battle_choices.gd" id="3_idued"]
 [ext_resource type="PackedScene" uid="uid://c47lw85nona8j" path="res://scene files/battle/item_screen.tscn" id="3_nfgn1"]
 [ext_resource type="PackedScene" uid="uid://cnn7wx6822bp0" path="res://scene files/battle/check_screen.tscn" id="4_vhsau"]
 [ext_resource type="PackedScene" uid="uid://gjy1trqd2we2" path="res://scene files/battle/songs_screen.tscn" id="5_3ncq2"]
@@ -46,10 +46,10 @@ anchor_left = 0.05
 anchor_top = 0.73
 anchor_right = 0.95
 anchor_bottom = 0.95
-offset_left = 0.399998
-offset_top = -25.872
-offset_right = 0.599976
-offset_bottom = 0.400024
+offset_left = -32.6
+offset_top = -40.04
+offset_right = 30.6
+offset_bottom = 13.4
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.34829, 0.596349, 0.811583, 1)
@@ -60,10 +60,10 @@ anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = -180.0
-offset_right = -79.0
-offset_bottom = -50.0
+offset_left = 42.0
+offset_top = -196.0
+offset_right = -43.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 21
@@ -110,10 +110,10 @@ text = "run"
 
 [connection signal="pressed" from="battle_choices/HBoxContainer/attack_button" to="attack_screen" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/attack_button" to="battle_choices" method="_on_attack_button_pressed"]
-[connection signal="pressed" from="battle_choices/HBoxContainer/item_button" to="battle_choices" method="_on_item_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/item_button" to="item_screen" method="_on_item_button_pressed"]
-[connection signal="pressed" from="battle_choices/HBoxContainer/check_button" to="battle_choices" method="_on_check_button_pressed"]
+[connection signal="pressed" from="battle_choices/HBoxContainer/item_button" to="battle_choices" method="_on_item_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/check_button" to="check_screen" method="_on_check_button_pressed"]
-[connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="battle_choices" method="_on_song_button_pressed"]
+[connection signal="pressed" from="battle_choices/HBoxContainer/check_button" to="battle_choices" method="_on_check_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="songs_screen" method="_on_song_button_pressed"]
+[connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="battle_choices" method="_on_song_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/run_button" to="battle_choices" method="_on_run_button_pressed"]

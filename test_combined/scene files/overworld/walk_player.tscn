@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dh4aroaw0j4ke"]
 
-[ext_resource type="Script" path="res://scripts/overworld/walk_player.gd" id="1_eei2h"]
+[ext_resource type="Script" uid="uid://dhhk5myw7yend" path="res://scripts/overworld/walk_player.gd" id="1_eei2h"]
 [ext_resource type="Texture2D" uid="uid://bu30tq1t8onxc" path="res://sprite/derwalk/front1.png" id="1_rv01c"]
 [ext_resource type="Texture2D" uid="uid://d0d0sj3vp7vym" path="res://sprite/derwalk/front2.png" id="2_ycdk0"]
 [ext_resource type="Texture2D" uid="uid://bpcimo2sy4nr8" path="res://sprite/derwalk/front3.png" id="3_1xoec"]
