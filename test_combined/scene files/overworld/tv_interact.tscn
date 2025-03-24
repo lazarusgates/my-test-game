@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn8je1py5e5t1"]
+
+[ext_resource type="Texture2D" uid="uid://cw06wyirpyx1a" path="res://sprite/tvStore.png" id="1_wt622"]
+[ext_resource type="Script" uid="uid://bl1baw58cdul1" path="res://scene files/overworld/tv_interact.gd" id="1_yghl6"]
+[ext_resource type="PackedScene" uid="uid://dx7a80q6jwupt" path="res://scene files/overworld/inter_area.tscn" id="2_o1qgs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yghl6"]
+size = Vector2(460, 139)
+
+[node name="tv_interact" type="Node2D"]
+script = ExtResource("1_yghl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wt622")
+
+[node name="InterArea" parent="." instance=ExtResource("2_o1qgs")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterArea"]
+position = Vector2(145, 249.5)
+shape = SubResource("RectangleShape2D_yghl6")

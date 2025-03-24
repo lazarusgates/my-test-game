@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx7a80q6jwupt"]
+
+[ext_resource type="Script" uid="uid://duuo1w8nekhd6" path="res://scripts/overworld/inter_area.gd" id="1_hf320"]
+
+[node name="InterArea" type="Area2D"]
+script = ExtResource("1_hf320")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

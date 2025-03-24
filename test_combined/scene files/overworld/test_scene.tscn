@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://va8anffiib8n"]
+[gd_scene load_steps=4 format=3 uid="uid://va8anffiib8n"]
 
 [ext_resource type="PackedScene" uid="uid://b41s3h8dvkfun" path="res://scene files/overworld/test_tile_map.tscn" id="1_2re5j"]
 [ext_resource type="PackedScene" uid="uid://dh4aroaw0j4ke" path="res://scene files/overworld/walk_player.tscn" id="2_l3c2u"]
+[ext_resource type="PackedScene" uid="uid://cn8je1py5e5t1" path="res://scene files/overworld/tv_interact.tscn" id="3_vnn5f"]
 
 [node name="test_scene" type="Node2D"]
 
@@ -9,3 +10,7 @@
 
 [node name="walk_player" parent="." instance=ExtResource("2_l3c2u")]
 position = Vector2(49, 68)
+
+[node name="tv_interact" parent="." instance=ExtResource("3_vnn5f")]
+position = Vector2(200, -134)
+scale = Vector2(0.53, 0.53)

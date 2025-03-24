@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://07le6lg8qi8j"]
+
+[ext_resource type="Script" uid="uid://chk8uasq0ao0d" path="res://scripts/overworld/inter_manager.gd" id="1_b8v7m"]
+
+[node name="InterManager" type="Node2D"]
+script = ExtResource("1_b8v7m")

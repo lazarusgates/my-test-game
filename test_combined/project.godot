@@ -13,6 +13,10 @@ config_version=5
 config/name="test_game"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+InterManager="*res://scripts/overworld/inter_manager.tscn"
+
 [input]
 
 ui_left={
