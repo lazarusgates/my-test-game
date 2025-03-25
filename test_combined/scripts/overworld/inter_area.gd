@@ -4,7 +4,7 @@ class_name InterArea
 
 @export var action_name: String = "interact"
 
-var interact = func():
+var interact: Callable = func():
 	pass
 
 

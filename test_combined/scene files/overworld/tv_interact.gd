@@ -17,9 +17,8 @@ const lines: Array[String] = [
 ]
 
 func _ready():
-	print(inter_area)
-	var something = Callable(self, "_on_interact")
-	inter_area.interact = something
+	inter_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	print("You interacted with something!")
+	pass
+	#print("You interacted with something!")
