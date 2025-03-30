@@ -14,7 +14,10 @@ script = ExtResource("1_yghl6")
 texture = ExtResource("1_wt622")
 
 [node name="InterArea" parent="." instance=ExtResource("2_o1qgs")]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterArea"]
 position = Vector2(145, 249.5)
 shape = SubResource("RectangleShape2D_yghl6")
+
+[connection signal="trigger_interact" from="InterArea" to="." method="_on_inter_area_trigger_interact"]

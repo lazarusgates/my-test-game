@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://07le6lg8qi8j"]
+[gd_scene load_steps=2 format=3 uid="uid://dk2n1wvvpd8bt"]
 
-[ext_resource type="Script" uid="uid://chk8uasq0ao0d" path="res://scripts/overworld/inter_manager.gd" id="1_b8v7m"]
+[sub_resource type="GDScript" id="GDScript_asrcw"]
+script/source = "extends Node2D
+
+@onready var player = get_tree().get_first_node_in_group(\"player\")
+
+var active_area = null
+var can_interact = true
+
+func register_area(area: InterArea):
+	active_area = area
+
+func unregister_area():
+	active_area = null
+
+func _input(event):
+	if event.is_action_pressed(\"interact\") and can_interact:
+		if active_area == null:
+			return
+		else:
+			can_interact = false
+			
+			#active_area.interacting()
+			
+			can_interact = true
+"
 
 [node name="InterManager" type="Node2D"]
-script = ExtResource("1_b8v7m")
+script = SubResource("GDScript_asrcw")

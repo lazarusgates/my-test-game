@@ -12,5 +12,5 @@
 position = Vector2(49, 68)
 
 [node name="tv_interact" parent="." instance=ExtResource("3_vnn5f")]
-position = Vector2(200, -134)
+position = Vector2(200, -133)
 scale = Vector2(0.53, 0.53)

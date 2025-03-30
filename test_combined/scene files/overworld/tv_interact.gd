@@ -16,9 +16,5 @@ const lines: Array[String] = [
 	"This has always been your least favorite show."
 ]
 
-func _ready():
-	inter_area.interact = Callable(self, "_on_interact")
-
-func _on_interact():
-	pass
-	#print("You interacted with something!")
+func _on_inter_area_trigger_interact() -> void:
+	print("interacted with tv")

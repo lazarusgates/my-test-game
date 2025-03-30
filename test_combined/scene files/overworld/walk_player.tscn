@@ -93,6 +93,7 @@ animations = [{
 size = Vector2(56, 114)
 
 [node name="walk_player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_eei2h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -105,5 +106,3 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_5fb12")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="inter_area" type="Area2D" parent="."]
