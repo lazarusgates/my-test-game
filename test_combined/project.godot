@@ -15,7 +15,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-InterManager="*res://scripts/overworld/inter_manager.tscn"
+DialogueManager="*res://dialogue/dialogue_manager.gd"
 
 [input]
 

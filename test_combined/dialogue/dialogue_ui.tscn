@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4fkrwp4kgk5l"]
+
+[ext_resource type="Script" uid="uid://dwcyj8xdhtu8g" path="res://dialogue/dialogue_ui.gd" id="1_cq5d5"]
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 320)
+script = ExtResource("1_cq5d5")
+
+[node name="dialogue_box" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.691
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.231964
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="dialogue_box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.717647)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue_box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_right = 0.979
+anchor_bottom = 0.88
+offset_left = 15.808
+offset_top = 16.0
+offset_right = 23.192
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.967034, 1.03542)
+text = "text"
+
+[node name="name_box_left" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.021
+anchor_top = 0.593
+anchor_right = 0.222
+anchor_bottom = 0.667
+offset_left = -0.192001
+offset_top = -0.264038
+offset_right = 0.255981
+offset_bottom = -0.216034
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="name_box_left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.717647)
+
+[node name="Label" type="Label" parent="name_box_left"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name_box_right" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.021
+anchor_top = 0.593
+anchor_right = 0.222
+anchor_bottom = 0.667
+offset_left = 871.808
+offset_top = -0.264038
+offset_right = 872.256
+offset_bottom = -0.216034
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="name_box_right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.717647)
+
+[node name="Label" type="Label" parent="name_box_right"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var dialogue_manager = $"/root/DialogueManager"
 
 @export var speed = 300
 
@@ -7,6 +8,8 @@ func _ready():
 	$AnimatedSprite2D.animation = "down"
 
 func _physics_process(_delta):
+	if dialogue_manager.currently_speaking:
+		return
 	#Calculate vertical movement
 	if Input.is_action_pressed("move_down"):
 		velocity.y = speed
