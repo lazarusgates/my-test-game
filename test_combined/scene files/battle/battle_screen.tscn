@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://daxr2bme2ati"]
+[gd_scene load_steps=2 format=3 uid="uid://daxr2bme2ati"]
 
 [ext_resource type="PackedScene" uid="uid://b6rbn3nbp3jgy" path="res://scene files/battle/battle_menu.tscn" id="1_duuuk"]
-[ext_resource type="Texture2D" uid="uid://cqbn5matknklx" path="res://sprite/barttlespriter.png" id="1_qc8bm"]
 
 [node name="battle_screen" type="Control"]
 layout_mode = 3
@@ -18,11 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="player" type="Sprite2D" parent="."]
-position = Vector2(202, 298)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_qc8bm")
 
 [node name="battle menu" parent="." instance=ExtResource("1_duuuk")]
 layout_mode = 1

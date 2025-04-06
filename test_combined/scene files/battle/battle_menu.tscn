@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6rbn3nbp3jgy"]
+[gd_scene load_steps=9 format=3 uid="uid://b6rbn3nbp3jgy"]
 
 [ext_resource type="Script" uid="uid://72ajyty6hc0g" path="res://scripts/battle/battle_menu.gd" id="1_7j18s"]
 [ext_resource type="Theme" uid="uid://l0v0sqkmsqy" path="res://art/button_theme.tres" id="2_jdoa2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c47lw85nona8j" path="res://scene files/battle/item_screen.tscn" id="3_nfgn1"]
 [ext_resource type="PackedScene" uid="uid://cnn7wx6822bp0" path="res://scene files/battle/check_screen.tscn" id="4_vhsau"]
 [ext_resource type="PackedScene" uid="uid://gjy1trqd2we2" path="res://scene files/battle/songs_screen.tscn" id="5_3ncq2"]
+[ext_resource type="PackedScene" uid="uid://srfr7tavucq1" path="res://key_manager.tscn" id="8_a1y2u"]
 
 [node name="battle menu" type="Control"]
 layout_mode = 3
@@ -108,6 +109,9 @@ focus_neighbor_right = NodePath("../attack_button")
 theme = ExtResource("2_jdoa2")
 text = "run"
 
+[node name="key_manager" parent="." instance=ExtResource("8_a1y2u")]
+
+[connection signal="spawn_keys" from="attack_screen" to="key_manager" method="_on_attack_screen_spawn_keys"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/attack_button" to="attack_screen" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/attack_button" to="battle_choices" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/item_button" to="item_screen" method="_on_item_button_pressed"]
@@ -117,3 +121,5 @@ text = "run"
 [connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="songs_screen" method="_on_song_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="battle_choices" method="_on_song_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/run_button" to="battle_choices" method="_on_run_button_pressed"]
+[connection signal="return_to_menu" from="key_manager" to="." method="_on_key_manager_return_to_menu"]
+[connection signal="return_to_menu" from="key_manager" to="battle_choices" method="_on_key_manager_return_to_menu"]

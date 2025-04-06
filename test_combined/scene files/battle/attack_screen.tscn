@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cayi8nigudrlo"]
+[gd_scene load_steps=3 format=3 uid="uid://cayi8nigudrlo"]
 
 [ext_resource type="Script" uid="uid://b2aum3ikqbiah" path="res://scripts/battle/attack_screen.gd" id="1_uoj2v"]
+[ext_resource type="PackedScene" uid="uid://srfr7tavucq1" path="res://key_manager.tscn" id="2_c7xwo"]
 
 [node name="attack_screen" type="Control"]
 layout_mode = 3
@@ -11,27 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uoj2v")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -272.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="key_manager" parent="." instance=ExtResource("2_c7xwo")]
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -11.5
-offset_right = 78.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "this is a piano! wow!"
+[connection signal="spawn_keys" from="." to="key_manager" method="_on_attack_screen_spawn_keys"]
+[connection signal="return_to_menu" from="key_manager" to="." method="_on_key_manager_return_to_menu"]
