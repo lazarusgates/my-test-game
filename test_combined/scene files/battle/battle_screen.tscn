@@ -20,3 +20,35 @@ grow_vertical = 2
 
 [node name="battle menu" parent="." instance=ExtResource("1_duuuk")]
 layout_mode = 1
+
+[node name="player" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 384.0
+offset_right = 256.0
+offset_bottom = 424.0
+
+[node name="ColorRect" type="ColorRect" parent="player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="level_label" type="Label" parent="player"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 31.0
+text = "LVL 1"
+
+[node name="health_label" type="Label" parent="player"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 224.0
+offset_bottom = 31.0
+text = "HEALTH 200"

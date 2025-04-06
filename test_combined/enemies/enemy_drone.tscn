@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://8vlpeb7xfg01"]
+
+[ext_resource type="Script" uid="uid://dls8fmsmx1q5i" path="res://enemies/enemy_drone.gd" id="1_pqr5u"]
+[ext_resource type="Texture2D" uid="uid://3tfofqfsqlq4" path="res://enemies/sprites/drone/rock.png" id="2_vb0qu"]
+
+[node name="EnemyDrone" type="Node2D"]
+script = ExtResource("1_pqr5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vb0qu")
+
+[node name="enemy_name" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -168.0
+offset_right = 56.0
+offset_bottom = -144.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemy_level" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -128.0
+offset_right = -24.0
+offset_bottom = -104.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemy_health" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -128.0
+offset_right = 56.0
+offset_bottom = -104.0
+horizontal_alignment = 1
+vertical_alignment = 1
