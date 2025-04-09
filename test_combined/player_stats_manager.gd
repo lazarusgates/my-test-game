@@ -4,13 +4,13 @@ var base_health = 200
 var base_defense = 5
 var base_speed = 20
 
-var player_health
-var player_level
-var player_defense
-var player_speed
+var player_health = base_health
+var player_level = 1
+var player_defense = base_defense
+var player_speed = base_speed
 
-var player_money
-var player_exp
+var player_money = 0
+var player_xp = 0
 
 #this function should only be run once per save
 func game_start():
@@ -20,13 +20,13 @@ func game_start():
 	player_speed = 20
 
 	player_money = 0
-	player_exp = 0
+	player_xp = 0
 
-func add_exp(earned_exp: int):
-	player_exp += earned_exp
-	if exp >= 1000 * player_level:
+func add_xp(earned_xp: int):
+	player_xp += earned_xp
+	if player_xp >= 1000 * player_level:
 		level_up()
-		player_exp = 0
+		player_xp = 0
 
 func level_up():
 	player_level += 1

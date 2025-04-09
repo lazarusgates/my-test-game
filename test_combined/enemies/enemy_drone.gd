@@ -11,6 +11,9 @@ var health: int = 75
 var defense: int = 2
 var speed: int = 30
 
+var money = 50
+var xp = 100
+
 
 func set_enemy(type: String, enemy_level: int):
 	genre_type = type
@@ -49,7 +52,7 @@ func selected(toggle: bool):
 	else:
 		$selected_halo.hide()
 
-func take_damage(type, damage_taken):
+func take_damage(damage_taken, type):
 	var defended_damage = damage_taken - (damage_taken * (defense/200))
 	if type == strong_against:
 		health -= defended_damage * 0.5
@@ -58,10 +61,7 @@ func take_damage(type, damage_taken):
 	else:
 		health -= defended_damage
 	
-	if health <= 0:
-		die()
-	else:
-		$enemy_health.text = health
+	$enemy_health.text = str(health)
 
 func deal_damage(turn, player_health):
 	var damage_variation = randi_range(-20, 20)
@@ -70,7 +70,13 @@ func deal_damage(turn, player_health):
 func return_speed():
 	return(speed * level)
 
+func return_money():
+	var variation = randi_range(-10*level/2, 10*level/2)
+	return(money + variation)
+
+func return_xp():
+	var variation = randi_range(-10*level/2, 10*level/2)
+	return(xp + variation)
+
 func die():
-	print("here is where i would send exp and money")
-	print("but i'm not doing that yet")
 	queue_free()

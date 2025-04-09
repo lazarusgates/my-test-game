@@ -10,16 +10,18 @@ var song_dict = {
 
 #combine these dicts into one?? maybe?? it's a lot of copy/pasting otherwise...
 var hit_dict = {
+	"Fumble": 20,
 	"Basic Pop Attack": 50,
 	"Basic Rock Attack": 75
 }
 
 var type_dict = {
+	"Fumble": "none",
 	"Basic Pop Attack": "pop",
 	"Basic Rock Attack": "rock"
 }
 
-signal finished_attack
+signal finished_attack()
 signal first_key_pressed
 
 var song_triggered = false
@@ -70,7 +72,7 @@ func check_song():
 				song_played = song
 				played_song(song_played)
 				return
-	deal_damage("fumble", 20)
+	deal_damage("Fumble", 20)
 	
 
 func played_song(song):
@@ -101,15 +103,15 @@ func deal_damage(song, damage):
 	if song == "fumble":
 		$song_label.text = "Fumbled!"
 		await get_tree().create_timer(1.5).timeout
-		$damage_label.text = "Damage Done: %d" % [damage]
-		await get_tree().create_timer(1.5).timeout
 	else:
 		$song_label.text = "Song Played: " + song
 		await get_tree().create_timer(1.5).timeout
-		$damage_label.text = "Damage Done: %d" % [damage]
-		await get_tree().create_timer(1.5).timeout
-		#grab type_dict[song] for song's typing
-		#necessary for doubling or halving of damage depending on targeted enemy's type
+	
+	$damage_label.text = "Damage Done: %d" % [damage]
+	await get_tree().create_timer(1.5).timeout
+	#grab type_dict[song] for song's typing
+	#necessary for doubling or halving of damage depending on targeted enemy's type
+	finished_attack.emit(damage, type_dict[song])
 	end_attack()
 
 func end_attack():
@@ -120,4 +122,3 @@ func end_attack():
 	keys.clear()
 	played.clear()
 	song_triggered = false
-	finished_attack.emit()
