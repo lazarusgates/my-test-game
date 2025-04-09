@@ -9,8 +9,8 @@ var player_level
 var player_defense
 var player_speed
 
-var money
-var exp
+var player_money
+var player_exp
 
 #this function should only be run once per save
 func game_start():
@@ -19,14 +19,14 @@ func game_start():
 	player_defense = 5
 	player_speed = 20
 
-	money = 0
-	exp = 0
+	player_money = 0
+	player_exp = 0
 
 func add_exp(earned_exp: int):
-	exp += earned_exp
+	player_exp += earned_exp
 	if exp >= 1000 * player_level:
 		level_up()
-		exp = 0
+		player_exp = 0
 
 func level_up():
 	player_level += 1
@@ -36,9 +36,10 @@ func level_up():
 
 func take_damage(damage: int):
 	player_health -= damage - (damage * (player_defense/200))
-	return(player_health)
 	if player_health <= 0:
 		die()
+	else:
+		return(player_health)
 
 func die():
 	print("bro you lost the game")

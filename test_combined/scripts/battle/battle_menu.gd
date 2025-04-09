@@ -5,6 +5,5 @@ extends Control
 func _ready():
 	attackButton.grab_focus()
 
-
-func _on_key_manager_return_to_menu() -> void:
+func _on_battle_manager_return_to_menu() -> void:
 	attackButton.grab_focus()

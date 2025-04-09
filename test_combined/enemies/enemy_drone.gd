@@ -36,12 +36,18 @@ func set_enemy(type: String, enemy_level: int):
 	$enemy_name.text = type + " Drone"
 	
 	level = enemy_level
-	$enemy_level.text = level
+	$enemy_level.text = str(level)
 	
 	health = health * level
-	$enemy_health.text = health
+	$enemy_health.text = str(health)
 	
 	attack = attack * level
+
+func selected(toggle: bool):
+	if toggle:
+		$selected_halo.show()
+	else:
+		$selected_halo.hide()
 
 func take_damage(type, damage_taken):
 	var defended_damage = damage_taken - (damage_taken * (defense/200))

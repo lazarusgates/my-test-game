@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://daxr2bme2ati"]
+[gd_scene load_steps=3 format=3 uid="uid://daxr2bme2ati"]
 
 [ext_resource type="PackedScene" uid="uid://b6rbn3nbp3jgy" path="res://scene files/battle/battle_menu.tscn" id="1_duuuk"]
+[ext_resource type="PackedScene" uid="uid://c51e1jcaefl5h" path="res://scene files/battle/battle_manager.tscn" id="2_qc8bm"]
 
 [node name="battle_screen" type="Control"]
 layout_mode = 3
@@ -52,3 +53,14 @@ offset_top = 8.0
 offset_right = 224.0
 offset_bottom = 31.0
 text = "HEALTH 200"
+
+[node name="battle_manager" parent="." instance=ExtResource("2_qc8bm")]
+
+[connection signal="pressed" from="battle menu/battle_choices/HBoxContainer/attack_button" to="battle_manager" method="_on_attack_button_pressed"]
+[connection signal="finished_attack" from="battle menu/key_manager" to="battle_manager" method="_on_key_manager_finished_attack"]
+[connection signal="return_to_menu" from="battle_manager" to="battle menu" method="_on_battle_manager_return_to_menu"]
+[connection signal="return_to_menu" from="battle_manager" to="battle menu/attack_screen" method="_on_battle_manager_return_to_menu"]
+[connection signal="return_to_menu" from="battle_manager" to="battle menu/battle_choices" method="_on_battle_manager_return_to_menu"]
+[connection signal="spawn_keys" from="battle_manager" to="battle menu/key_manager" method="_on_battle_manager_spawn_keys"]
+
+[editable path="battle menu"]

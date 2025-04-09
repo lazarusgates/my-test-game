@@ -6,6 +6,14 @@
 [node name="EnemyDrone" type="Node2D"]
 script = ExtResource("1_pqr5u")
 
+[node name="selected_halo" type="ColorRect" parent="."]
+visible = false
+offset_left = -72.0
+offset_top = -96.0
+offset_right = 72.0
+offset_bottom = 96.0
+color = Color(0.353438, 0.928907, 0.294571, 1)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_vb0qu")

@@ -21,6 +21,5 @@ func _on_song_button_pressed() -> void:
 func _on_run_button_pressed() -> void:
 	print('Attempting to run!')
 
-
-func _on_key_manager_return_to_menu() -> void:
+func _on_battle_manager_return_to_menu() -> void:
 	self.show()

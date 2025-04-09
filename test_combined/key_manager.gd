@@ -7,12 +7,19 @@ var song_dict = {
 	"Basic Pop Attack" : [["mid_C", 500, 0] , ["E", 500, 1000] , ["G", 500, 1500] , ["hi_C", 500, 2000]],
 	"Basic Rock Attack": [["mid_C", 500, 500] , ["D", 500, 1000] , ["E", 500, 1500] , ["F", 500, 2000], ["G", 500, 2500]]
 }
+
+#combine these dicts into one?? maybe?? it's a lot of copy/pasting otherwise...
 var hit_dict = {
 	"Basic Pop Attack": 50,
 	"Basic Rock Attack": 75
 }
 
-signal return_to_menu
+var type_dict = {
+	"Basic Pop Attack": "pop",
+	"Basic Rock Attack": "rock"
+}
+
+signal finished_attack
 signal first_key_pressed
 
 var song_triggered = false
@@ -21,8 +28,7 @@ var played = {}
 var time_since_note_start
 
 
-func _on_attack_screen_spawn_keys() -> void:
-	print("show keys")
+func _on_battle_manager_spawn_keys() -> void:
 	for i in range(0, 8):
 		keys.append(key_scene.instantiate())
 		self.add_child(keys[i])
@@ -92,10 +98,18 @@ func calc_damage(song):
 	return damage
 
 func deal_damage(song, damage):
-	$song_label.text = "Song Played: " + song
-	await get_tree().create_timer(1.5).timeout
-	$damage_label.text = "Damage Done: %d" % [damage]
-	await get_tree().create_timer(1.5).timeout
+	if song == "fumble":
+		$song_label.text = "Fumbled!"
+		await get_tree().create_timer(1.5).timeout
+		$damage_label.text = "Damage Done: %d" % [damage]
+		await get_tree().create_timer(1.5).timeout
+	else:
+		$song_label.text = "Song Played: " + song
+		await get_tree().create_timer(1.5).timeout
+		$damage_label.text = "Damage Done: %d" % [damage]
+		await get_tree().create_timer(1.5).timeout
+		#grab type_dict[song] for song's typing
+		#necessary for doubling or halving of damage depending on targeted enemy's type
 	end_attack()
 
 func end_attack():
@@ -106,4 +120,4 @@ func end_attack():
 	keys.clear()
 	played.clear()
 	song_triggered = false
-	return_to_menu.emit()
+	finished_attack.emit()

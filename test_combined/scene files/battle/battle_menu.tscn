@@ -111,7 +111,6 @@ text = "run"
 
 [node name="key_manager" parent="." instance=ExtResource("8_a1y2u")]
 
-[connection signal="spawn_keys" from="attack_screen" to="key_manager" method="_on_attack_screen_spawn_keys"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/attack_button" to="attack_screen" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/attack_button" to="battle_choices" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/item_button" to="item_screen" method="_on_item_button_pressed"]
@@ -121,5 +120,3 @@ text = "run"
 [connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="songs_screen" method="_on_song_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/song_button" to="battle_choices" method="_on_song_button_pressed"]
 [connection signal="pressed" from="battle_choices/HBoxContainer/run_button" to="battle_choices" method="_on_run_button_pressed"]
-[connection signal="return_to_menu" from="key_manager" to="." method="_on_key_manager_return_to_menu"]
-[connection signal="return_to_menu" from="key_manager" to="battle_choices" method="_on_key_manager_return_to_menu"]
