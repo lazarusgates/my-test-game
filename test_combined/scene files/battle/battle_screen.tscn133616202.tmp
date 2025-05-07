@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxr2bme2ati"]
+
+[ext_resource type="PackedScene" uid="uid://b6rbn3nbp3jgy" path="res://scene files/battle/battle_menu.tscn" id="1_duuuk"]
+[ext_resource type="PackedScene" uid="uid://c51e1jcaefl5h" path="res://scene files/battle/battle_manager.tscn" id="2_qc8bm"]
+
+[node name="battle_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="battle menu" parent="." instance=ExtResource("1_duuuk")]
+layout_mode = 1
+
+[node name="battle_manager" parent="." instance=ExtResource("2_qc8bm")]
+
+[node name="player" type="Control" parent="battle_manager"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 384.0
+offset_right = 256.0
+offset_bottom = 424.0
+
+[node name="ColorRect" type="ColorRect" parent="battle_manager/player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="level_label" type="Label" parent="battle_manager/player"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 31.0
+text = "LVL 1"
+
+[node name="health_label" type="Label" parent="battle_manager/player"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 224.0
+offset_bottom = 31.0
+text = "HEALTH 200"
+
+[connection signal="pressed" from="battle menu/battle_choices/HBoxContainer/attack_button" to="battle_manager" method="_on_attack_button_pressed"]
+[connection signal="finished_attack" from="battle menu/key_manager" to="battle_manager" method="_on_key_manager_finished_attack"]
+[connection signal="return_to_menu" from="battle_manager" to="battle menu" method="_on_battle_manager_return_to_menu"]
+[connection signal="return_to_menu" from="battle_manager" to="battle menu/attack_screen" method="_on_battle_manager_return_to_menu"]
+[connection signal="return_to_menu" from="battle_manager" to="battle menu/battle_choices" method="_on_battle_manager_return_to_menu"]
+[connection signal="spawn_keys" from="battle_manager" to="battle menu/key_manager" method="_on_battle_manager_spawn_keys"]
+
+[editable path="battle menu"]

@@ -1,30 +1,62 @@
 extends Node2D
-var enemy_drone_scene = preload("res://enemies/enemy_drone.tscn")
+@onready var enemy_drone_scene = preload("res://enemies/enemy_drone.tscn")
+@onready var health_label = $player/health_label
+@onready var level_label = $player/level_label
 
 var num_enemies
 var enemies = {}
 var order = []
-var turns
+var turns = 0
 var selecting = false
 var selected_enemy = 1
+
+var next_turn = false
+var whose_turn = -1
+var battle_finished = false
 
 var rewarded_xp = 0
 var rewarded_money = 0
 
 signal spawn_keys
-signal return_to_menu
+signal toggle_menu
 
 func _ready():
 	selected_enemy = 1
-	num_enemies = randi_range(1, 5)
+	#spawn a random number of test enemies
+	num_enemies = randi_range(1, 1)
 	for i in range(1, num_enemies+1):
 		enemies[i] = enemy_drone_scene.instantiate()
-		enemies[i].set_enemy("rock", 1, i)
+		enemies[i].set_enemy("rock", 1)
 		self.add_child(enemies[i])
 		enemies[i].global_position.y = 200
 		enemies[i].global_position.x = 200 * i
-	print("num enemies: ", len(enemies))
+	
+	#calculate the turn order based on speed
 	calc_order()
+	
+	#initiate first turn
+	next_turn = true
+
+func _process(_delta):
+	if PlayerStatsManager.player_health <= 0:
+		battle_lost()
+
+	if next_turn and not battle_finished:
+		whose_turn += 1
+		#roll over the turns if every entity has taken their turn that round
+		if whose_turn >= len(order):
+			print("next turn!")
+			turns += 1
+			whose_turn = 0
+		
+		#if the id in order is -1, it's the players turn
+		#otherwise, if the order id hasn't been nulled, it's that enemies turn
+		if order[whose_turn] == -1:
+			next_turn = false
+			toggle_menu.emit()
+		elif typeof(enemies.get(order[whose_turn])) != TYPE_STRING:
+			next_turn = false
+			enemy_turn(order[whose_turn])
 
 func _input(event):
 	if selecting:
@@ -39,36 +71,36 @@ func _input(event):
 			selecting = false
 			enemies[selected_enemy].selected(false)
 
+func enemy_turn(id):
+	var damage = enemies[id].deal_damage(turns)
+	print("enemy ", id, " attacks for ", damage, " damage!")
+	PlayerStatsManager.take_damage(damage)
+	health_label.text = str(PlayerStatsManager.player_health)
+	next_turn = true
+
 func calc_order():
 	#calculate the order of the enemies
 	#sorts order in DESCENDING order i.e. fastest is first
 	var idx = 1
 	for i in range(1, len(enemies)+1):
 		while idx <= len(enemies):
-			print("this iteration's speed: ", enemies[i].return_speed())
 			if order.is_empty():
-				print("first entry is ", enemies[i].return_speed())
 				order.append(idx)
-				print("first entry order: ", order)
 				break
 			elif idx == len(order):
-				print("current slowest: ", enemies[i].return_speed())
 				order.append(i)
 				break
 			elif enemies[i].return_speed() >= enemies[order[idx-1]].return_speed():
 				order.insert(idx-1, i)
-				print(i, "th iteration order: ", order)
 				break
 			else:
 				idx += 1
-	
+	print(order)
 	#insert the player's position in the turn order
 	if PlayerStatsManager.player_speed >= enemies[order[0]].return_speed():
 		order.insert(0, -1)
-		print("player is fastest: ", order)
 	elif PlayerStatsManager.player_speed <= enemies[order[len(order)-1]].return_speed():
 		order.append(-1)
-		print("player is slowest: ", order)
 	else:
 		idx = 1
 		while idx <= len(order):
@@ -84,7 +116,7 @@ func selecting_enemy():
 	change_selection("init")
 
 func player_attack(enemy):
-	print("Attacking enemy ", enemy+1)
+	print("Attacking enemy ", enemy)
 	spawn_keys.emit()
 
 func change_selection(direction):
@@ -93,17 +125,23 @@ func change_selection(direction):
 	elif len(enemies) != 1:
 		if direction == "left":
 			enemies[selected_enemy].selected(false)
-			if selected_enemy == 1:
-				selected_enemy = num_enemies
-			else:
+			selected_enemy -= 1
+			if selected_enemy < 1:
+				selected_enemy = len(enemies)
+			while true:
+				if typeof(enemies[selected_enemy]) != TYPE_STRING:
+					break
 				selected_enemy -= 1
 			enemies[selected_enemy].selected(true)
 				
 		elif direction == "right":
 			enemies[selected_enemy].selected(false)
-			if selected_enemy == num_enemies:
-				selected_enemy = 1
-			else:
+			selected_enemy += 1
+			while true:
+				if selected_enemy > len(enemies):
+					selected_enemy = 1
+				if typeof(enemies[selected_enemy]) != TYPE_STRING:
+					break
 				selected_enemy += 1
 			enemies[selected_enemy].selected(true)
 
@@ -118,11 +156,18 @@ func kill_enemy():
 	enemies[selected_enemy].die()
 	
 	#remove dead enemy from enemies dict
-	enemies.erase(selected_enemy)
+	enemies[selected_enemy] = "dead"
 	num_enemies -= 1
+	print(enemies)
 	selected_enemy = 1
-	if enemies.is_empty():
+	if num_enemies <= 0:
 		battle_end()
+	else:
+		while true:
+			if typeof(enemies[selected_enemy]) != TYPE_STRING:
+				break
+		
+			selected_enemy += 1
 
 func battle_end():
 	PlayerStatsManager.add_xp(rewarded_xp)
@@ -130,13 +175,17 @@ func battle_end():
 	print("total xp: ", PlayerStatsManager.player_xp)
 	print("total money: ", PlayerStatsManager.player_money)
 	print("all enemies defeated: return to overworld")
+	battle_finished = true
+
+func battle_lost():
+	print("dieded")
+	battle_finished = true
 
 func _on_key_manager_finished_attack(damage, type) -> void:
+	next_turn = true
 	enemies[selected_enemy].take_damage(damage, type)
 	if enemies[selected_enemy].health <= 0:
 		kill_enemy()
-	return_to_menu.emit()
-
 
 func _on_attack_button_pressed() -> void:
 	selecting_enemy()

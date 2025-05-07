@@ -5,10 +5,8 @@ var level
 var strong_against
 var weak_to
 
-var id: int
-
 #stats
-var attack: int = 40
+var attack: int = 20
 var health: int = 75
 var defense: int = 2
 var speed: int = 30
@@ -16,9 +14,8 @@ var speed: int = 30
 var money = 50
 var xp = 100
 
-func set_enemy(type: String, enemy_level: int, unique_id: int):
+func set_enemy(type: String, enemy_level: int):
 	genre_type = type
-	unique_id = id
 	match genre_type:
 		"pop":
 			strong_against = "punk"
@@ -66,15 +63,12 @@ func take_damage(damage_taken, type):
 	
 	$enemy_health.text = str(health)
 
-func deal_damage(turn, player_health):
-	var damage_variation = randi_range(-20, 20)
+func deal_damage(turn):
+	var damage_variation = randi_range(-10, 10)
 	return(attack + damage_variation)
 
 func return_speed():
 	return(speed * level)
-
-func return_id():
-	return(id)
 
 func return_money():
 	var variation = randi_range(-10*level/2, 10*level/2)

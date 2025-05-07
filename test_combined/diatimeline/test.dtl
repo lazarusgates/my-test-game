@@ -1,0 +1,4 @@
+join derek left [animation="Slide In Left"]
+derek: I am saying things for testing purposes.
+join jenny right [animation="Slide In Right" mirrored="true"]
+jenny: Now I am saying things for testing purposes, too!
