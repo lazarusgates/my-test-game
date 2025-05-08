@@ -2,6 +2,7 @@ extends Node2D
 @onready var enemy_drone_scene = preload("res://enemies/enemy_drone.tscn")
 @onready var health_label = $player/health_label
 @onready var level_label = $player/level_label
+@export var world = load("res://scene files/overworld/test_scene.tscn")
 
 var num_enemies
 var enemies = {}
@@ -175,6 +176,7 @@ func battle_end():
 	print("total xp: ", PlayerStatsManager.player_xp)
 	print("total money: ", PlayerStatsManager.player_money)
 	print("all enemies defeated: return to overworld")
+	get_tree().change_scene_to_packed(world)
 	battle_finished = true
 
 func battle_lost():

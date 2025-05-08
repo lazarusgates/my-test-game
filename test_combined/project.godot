@@ -18,19 +18,23 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 InterManager="*res://scripts/overworld/inter_manager.tscn"
 PlayerStatsManager="*res://player_stats_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+EncManager="*res://scripts/overworld/enc_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "derek": "res://diachars/derek.dch",
-"jenny": "res://diachars/jenny.dch"
+"jenny": "res://diachars/jenny.dch",
+"speaker": "res://diatimeline/speaker.dch",
+"unknown": "res://diatimeline/unknown.dch"
 }
 directories/dtl_directory={
-"test": "res://diatimeline/test.dtl"
+"test": "res://diatimeline/test.dtl",
+"tvinteract": "res://diatimeline/tvinteract.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://diatimeline/test_bubbles.tres", "res://diatimeline/test_bubbles_right.tres"]
+layout/default_style="res://diatimeline/test_bubbles.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
