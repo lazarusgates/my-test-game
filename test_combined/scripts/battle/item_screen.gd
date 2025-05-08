@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_item_button_pressed() -> void:
-	self.show()
+	pass

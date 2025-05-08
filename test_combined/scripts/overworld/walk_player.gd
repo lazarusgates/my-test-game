@@ -13,6 +13,11 @@ func _ready():
 	position = EncManager.saved_position
 
 func _physics_process(_delta):
+	#stop all movement if dialogue is currently running
+	if Dialogic.current_timeline != null:
+		$AnimatedSprite2D.stop()
+		return
+	
 	#Calculate vertical movement
 	if Input.is_action_pressed("move_down"):
 		velocity.y = speed
@@ -42,11 +47,13 @@ func _physics_process(_delta):
 	#Determine if player is moving or not
 	if velocity.length() > 0:
 		$AnimatedSprite2D.play()
+		
+		#check if the player is on an encounter tile
 		update_tile()
 		if encounterable:
 			distance_since_encounter += 1
-			print(distance_since_encounter / step_size)
-			print(EncManager.encounter_number)
+			
+			#trigger the encounter once the number of steps hits the random encounter number
 			if distance_since_encounter / step_size >= EncManager.encounter_number:
 				set_physics_process(false)
 				$AnimatedSprite2D.stop()
@@ -59,6 +66,7 @@ func _physics_process(_delta):
 	move_and_slide()
 		
 
+#update what tile the player is on
 func update_tile():
 	var tiledata = tilemap.get_cell_tile_data(tilemap.local_to_map(position))
 	if tiledata:

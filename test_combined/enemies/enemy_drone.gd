@@ -63,7 +63,7 @@ func take_damage(damage_taken, type):
 	
 	$enemy_health.text = str(health)
 
-func deal_damage(turn):
+func deal_damage():
 	var damage_variation = randi_range(-10, 10)
 	return(attack + damage_variation)
 

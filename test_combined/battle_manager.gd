@@ -39,7 +39,7 @@ func _ready():
 	next_turn = true
 
 func _process(_delta):
-	if PlayerStatsManager.player_health <= 0:
+	if PlayerStatsManager.current_player_health <= 0:
 		battle_lost()
 
 	if next_turn and not battle_finished:
@@ -76,7 +76,7 @@ func enemy_turn(id):
 	var damage = enemies[id].deal_damage(turns)
 	print("enemy ", id, " attacks for ", damage, " damage!")
 	PlayerStatsManager.take_damage(damage)
-	health_label.text = str(PlayerStatsManager.player_health)
+	health_label.text = str(PlayerStatsManager.current_player_health)
 	next_turn = true
 
 func calc_order():

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvief5gayywib"]
+
+[ext_resource type="Script" uid="uid://bikh05ccmbpvs" path="res://scene files/overworld/save_station.gd" id="1_uaabg"]
+[ext_resource type="Texture2D" uid="uid://cepijad3xnr6m" path="res://sprite/Screenshot 2025-05-08 165751.png" id="2_uaabg"]
+[ext_resource type="PackedScene" uid="uid://dx7a80q6jwupt" path="res://scene files/overworld/inter_area.tscn" id="3_ljrma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yghl6"]
+size = Vector2(187, 235)
+
+[node name="save_station" type="Node2D"]
+script = ExtResource("1_uaabg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uaabg")
+
+[node name="InterArea" parent="." instance=ExtResource("3_ljrma")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterArea"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_yghl6")
+
+[connection signal="trigger_interact" from="InterArea" to="." method="_on_inter_area_trigger_interact"]

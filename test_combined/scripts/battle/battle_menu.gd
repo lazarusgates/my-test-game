@@ -6,6 +6,5 @@ func _ready():
 	attackButton.grab_focus()
 
 func _on_battle_manager_toggle_menu() -> void:
-	print("showing menu")
 	attackButton.grab_focus()
 	self.show()

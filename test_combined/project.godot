@@ -29,6 +29,7 @@ directories/dch_directory={
 "unknown": "res://diatimeline/unknown.dch"
 }
 directories/dtl_directory={
+"savestation": "res://diatimeline/savestation.dtl",
 "test": "res://diatimeline/test.dtl",
 "tvinteract": "res://diatimeline/tvinteract.dtl"
 }

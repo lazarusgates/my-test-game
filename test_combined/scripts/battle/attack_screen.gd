@@ -8,9 +8,7 @@ func _ready():
 	self.hide()
 
 func _on_attack_button_pressed() -> void:
-	print("pressed")
 	if not attacking:
-		print("attacking")
 		attacking = true
 		self.show()
 
