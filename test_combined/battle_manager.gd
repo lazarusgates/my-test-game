@@ -73,7 +73,7 @@ func _input(event):
 			enemies[selected_enemy].selected(false)
 
 func enemy_turn(id):
-	var damage = enemies[id].deal_damage(turns)
+	var damage = enemies[id].deal_damage()
 	print("enemy ", id, " attacks for ", damage, " damage!")
 	PlayerStatsManager.take_damage(damage)
 	health_label.text = str(PlayerStatsManager.current_player_health)

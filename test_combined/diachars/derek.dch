@@ -17,7 +17,7 @@
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://enemies/sprites/Screenshot 2025-05-07 170036.png\""
+"image": "\"res://sprite/talksprites/derek/derNorm.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

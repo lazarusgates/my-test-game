@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://daxr2bme2ati"]
+[gd_scene load_steps=4 format=3 uid="uid://daxr2bme2ati"]
 
 [ext_resource type="PackedScene" uid="uid://b6rbn3nbp3jgy" path="res://scene files/battle/battle_menu.tscn" id="1_duuuk"]
 [ext_resource type="PackedScene" uid="uid://c51e1jcaefl5h" path="res://scene files/battle/battle_manager.tscn" id="2_qc8bm"]
+[ext_resource type="AudioStream" uid="uid://b4mejokm3kin6" path="res://audio/testbeat.wav" id="3_ghu0c"]
 
 [node name="battle_screen" type="Control"]
 layout_mode = 3
@@ -57,6 +58,11 @@ offset_top = 8.0
 offset_right = 224.0
 offset_bottom = 31.0
 text = "HEALTH 200"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ghu0c")
+volume_db = -7.429
+autoplay = true
 
 [connection signal="pressed" from="battle menu/battle_choices/HBoxContainer/attack_button" to="battle_manager" method="_on_attack_button_pressed"]
 [connection signal="finished_attack" from="battle menu/key_manager" to="battle_manager" method="_on_key_manager_finished_attack"]

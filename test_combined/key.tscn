@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://8p1ydgjatuuv"]
+[gd_scene load_steps=4 format=3 uid="uid://8p1ydgjatuuv"]
 
 [ext_resource type="Script" uid="uid://5pnsdgr2g4nt" path="res://key.gd" id="1_up4cr"]
+[ext_resource type="AudioStream" uid="uid://b3epoyd0eet2k" path="res://audio/key notes/mid_C_punch.wav" id="2_krfvd"]
+[ext_resource type="AudioStream" uid="uid://kvy28wxc8ja1" path="res://audio/key notes/mid_C_loop.wav" id="3_d8y70"]
 
 [node name="key" type="Node2D"]
 script = ExtResource("1_up4cr")
@@ -24,3 +26,11 @@ offset_left = -40.0
 offset_right = 32.0
 offset_bottom = 192.0
 color = Color(0, 0, 0, 1)
+
+[node name="punch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_krfvd")
+
+[node name="loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d8y70")
+
+[connection signal="finished" from="punch" to="." method="_on_punch_finished"]

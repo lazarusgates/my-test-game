@@ -17,7 +17,7 @@
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://enemies/sprites/Screenshot 2025-05-07 170051.png\""
+"image": "\"res://sprite/talksprites/jenny/jenNorm.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

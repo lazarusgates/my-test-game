@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyses55ghsq3a"
+path="res://.godot/imported/hi_C_punch.wav-2730e8675e542cfd40b0597344e87e9f.sample"
+
+[deps]
+
+source_file="res://audio/key notes/hi_C_punch.wav"
+dest_files=["res://.godot/imported/hi_C_punch.wav-2730e8675e542cfd40b0597344e87e9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

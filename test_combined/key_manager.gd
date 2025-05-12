@@ -4,7 +4,7 @@ extends Node2D
 
 var keys = []
 var song_dict = {
-	"Basic Pop Attack" : [["mid_C", 500, 0] , ["E", 500, 1000] , ["G", 500, 1500] , ["hi_C", 500, 2000]],
+	"Basic Pop Attack" : [["G", 500, 0] , ["D", 500, 1000] , ["F", 500, 1500] , ["G", 500, 2000]],
 	"Basic Rock Attack": [["mid_C", 500, 500] , ["D", 500, 1000] , ["E", 500, 1500] , ["F", 500, 2000], ["G", 500, 2500]]
 }
 

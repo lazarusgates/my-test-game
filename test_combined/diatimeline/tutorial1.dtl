@@ -1,0 +1,21 @@
+[style name="test_bubbles_right"]
+join jenny right [animation="Slide In Right" wait="true" mirrored="true"]
+jenny: Hey! You!
+[style name="test_bubbles"]
+join derek left [animation="Slide In Left" wait="true"]
+derek: Um...  Me?
+[style name="test_bubbles_right"]
+jenny: Do you see anyone else here, silly?
+[style name="test_bubbles"]
+derek: ...
+[style name="test_bubbles_right"]
+jenny: Do you play?
+[style name="test_bubbles"]
+derek: ...What?
+[style name="test_bubbles_right"]
+jenny: You know how to play, right? Or is that thing on your back just for show?
+[style name="test_bubbles"]
+derek: Who carries around an instrument they can't play? Of course I know how.
+[style name="test_bubbles_right"]
+jenny: Maybe I should specify. Do you know how to play it in a battle?
+jenny: Because no offense, but you don't exactly look like the fighting type.

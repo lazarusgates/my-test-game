@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r2gm5o0724tk"
+path="res://.godot/imported/f_punch.wav-8cb06f15e83f6319b273a2eb4ec7446b.sample"
+
+[deps]
+
+source_file="res://audio/key notes/f_punch.wav"
+dest_files=["res://.godot/imported/f_punch.wav-8cb06f15e83f6319b273a2eb4ec7446b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

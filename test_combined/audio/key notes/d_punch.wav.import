@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgmk74sujcoic"
+path="res://.godot/imported/d_punch.wav-b021e24dff7f72e3d0075139937b771b.sample"
+
+[deps]
+
+source_file="res://audio/key notes/d_punch.wav"
+dest_files=["res://.godot/imported/d_punch.wav-b021e24dff7f72e3d0075139937b771b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
