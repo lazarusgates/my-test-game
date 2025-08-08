@@ -9,13 +9,13 @@
 
 [node name="testTileMap" parent="." instance=ExtResource("1_2re5j")]
 
-[node name="walk_player" parent="." instance=ExtResource("2_l3c2u")]
-position = Vector2(49, 68)
-
 [node name="tv_interact" parent="." instance=ExtResource("3_vnn5f")]
-position = Vector2(200, -133)
+position = Vector2(200, -32)
 scale = Vector2(0.53, 0.53)
 
 [node name="save_station" parent="." instance=ExtResource("4_suvqq")]
 position = Vector2(82, 595)
 scale = Vector2(0.703225, 0.703225)
+
+[node name="walk_player" parent="." instance=ExtResource("2_l3c2u")]
+position = Vector2(49, 68)

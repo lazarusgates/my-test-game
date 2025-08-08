@@ -1,5 +1,7 @@
 extends Node2D
 @onready var enemy_drone_scene = preload("res://enemies/enemy_drone.tscn")
+@onready var enemy_bot_scene = preload("res://enemies/enemy_bot.tscn")
+
 @onready var health_label = $player/health_label
 @onready var level_label = $player/level_label
 @export var world = load("res://scene files/overworld/test_scene.tscn")
@@ -23,14 +25,32 @@ signal toggle_menu
 
 func _ready():
 	selected_enemy = 1
-	#spawn a random number of test enemies
-	num_enemies = randi_range(1, 1)
-	for i in range(1, num_enemies+1):
-		enemies[i] = enemy_drone_scene.instantiate()
-		enemies[i].set_enemy("rock", 1)
-		self.add_child(enemies[i])
-		enemies[i].global_position.y = 200
-		enemies[i].global_position.x = 200 * i
+	
+	#tutorial spawns
+	if PlayerStatsManager.cur_area == "tutorial":
+		num_enemies = 2
+		enemies[1] = enemy_bot_scene.instantiate()
+		enemies[1].set_enemy("noise", 1)
+		self.add_child(enemies[1])
+		enemies[1].global_position.y = 200
+		enemies[1].global_position.x = 200
+		
+		enemies[2] = enemy_bot_scene.instantiate()
+		enemies[2].set_enemy("noise", 1)
+		self.add_child(enemies[2])
+		enemies[2].global_position.y = 200
+		enemies[2].global_position.x = 400
+		
+	#demo spawns
+	elif PlayerStatsManager.cur_area == "demo":
+		num_enemies = randi_range(1, 2)
+		for i in range(1, num_enemies+1):
+			#spawn a random number of test enemies
+			enemies[i] = enemy_drone_scene.instantiate()
+			enemies[i].set_enemy("rock", 1)
+			self.add_child(enemies[i])
+			enemies[i].global_position.y = 200
+			enemies[i].global_position.x = 200 * i
 	
 	#calculate the turn order based on speed
 	calc_order()

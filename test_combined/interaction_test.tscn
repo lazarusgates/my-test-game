@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgkv521u1c2cp"]
-
-[ext_resource type="PackedScene" uid="uid://dh4aroaw0j4ke" path="res://scene files/overworld/walk_player.tscn" id="1_ksj01"]
-
-[node name="interaction test" type="Node2D"]
-
-[node name="walk_player" parent="." instance=ExtResource("1_ksj01")]

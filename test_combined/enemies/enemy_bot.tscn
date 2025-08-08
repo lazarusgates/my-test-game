@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0r3ktb33hrjm"]
+
+[ext_resource type="Script" uid="uid://bu1no3seuev44" path="res://enemies/enemy_bot.gd" id="1_3s1h5"]
+[ext_resource type="Texture2D" uid="uid://cc6wy1u0h2cy4" path="res://enemies/sprites/bot/noise.png" id="2_3s1h5"]
+
+[node name="EnemyBot" type="Node2D"]
+script = ExtResource("1_3s1h5")
+
+[node name="selected_halo" type="ColorRect" parent="."]
+visible = false
+offset_left = -102.0
+offset_top = -98.0
+offset_right = 104.0
+offset_bottom = 158.0
+color = Color(0.353438, 0.928907, 0.294571, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 29)
+scale = Vector2(0.310855, 0.310855)
+texture = ExtResource("2_3s1h5")
+
+[node name="enemy_name" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -168.0
+offset_right = 56.0
+offset_bottom = -144.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemy_level" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -128.0
+offset_right = -24.0
+offset_bottom = -104.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemy_health" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -128.0
+offset_right = 56.0
+offset_bottom = -104.0
+horizontal_alignment = 1
+vertical_alignment = 1

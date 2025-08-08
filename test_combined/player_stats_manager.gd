@@ -13,6 +13,8 @@ var player_speed = base_speed
 var player_money = 0
 var player_xp = 0
 
+var cur_area = "tutorial"
+
 #this function should only be run once per save
 func game_start():
 	total_player_health = 200
@@ -42,6 +44,9 @@ func take_damage(damage: int):
 		die()
 	else:
 		return(current_player_health)
+
+func change_area(new_area: String):
+	cur_area = new_area
 
 func die():
 	print("bro you lost the game")

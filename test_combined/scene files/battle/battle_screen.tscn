@@ -39,6 +39,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -46,17 +48,17 @@ color = Color(0, 0, 0, 1)
 [node name="level_label" type="Label" parent="battle_manager/player"]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = -8.0
 offset_right = 56.0
-offset_bottom = 31.0
+offset_bottom = 15.0
 text = "LVL 1"
 
 [node name="health_label" type="Label" parent="battle_manager/player"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 8.0
+offset_top = -8.0
 offset_right = 224.0
-offset_bottom = 31.0
+offset_bottom = 15.0
 text = "HEALTH 200"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

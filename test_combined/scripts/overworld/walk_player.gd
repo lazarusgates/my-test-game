@@ -55,8 +55,9 @@ func _physics_process(_delta):
 			
 			#trigger the encounter once the number of steps hits the random encounter number
 			if distance_since_encounter / step_size >= EncManager.encounter_number:
+				PlayerStatsManager.cur_area = tilemap.get_cell_tile_data(tilemap.local_to_map(position)).get_custom_data("area")
 				set_physics_process(false)
-				$AnimatedSprite2D.stop()
+				$AnimatedSprite2D.stop() 
 				EncManager.save_player_data(self)
 				EncManager.change_scene()
 	else:
@@ -70,6 +71,9 @@ func _physics_process(_delta):
 func update_tile():
 	var tiledata = tilemap.get_cell_tile_data(tilemap.local_to_map(position))
 	if tiledata:
+		#if the player is unable to trigger an encounter, reset the distance counter
 		if encounterable != tiledata.get_custom_data("trigEnc"):
 			distance_since_encounter = 0.0
+		
+		#check if the tile can trigger encounters or not
 		encounterable = tiledata.get_custom_data("trigEnc")
