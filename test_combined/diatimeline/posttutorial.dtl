@@ -1,0 +1,126 @@
+join derek left
+join jenny right [mirrored="true"]
+[style name="test_bubbles_right"]
+jenny: Wooow, that was exhilarating! It's so much more fun having someone to play with!
+jenny: Did you have fun?
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- No. It was terrifying and I suck at it.
+	[style name="test_bubbles_right"]
+	jenny: You do not! And you don't seem terrified at all!
+	jenny: Though I'd understand if you felt that way. If you're not skilled with sound weaponry, being pursued by even one bot is scary.
+- Yeah, actually. It was pretty fun.
+	[style name="test_bubbles_right"]
+	jenny: That's what I like to hear!
+	jenny: I could see you were really getting into it.
+	jenny: I have to say, it was really brave of you to go up against those bots when you're an amateur fighter.
+jenny: Most people freak out walking past one on the street! But you were getting chased by four of them and barely broke a sweat.
+jenny: Well, four including the one you tripped over that trash can. Quick thinking!
+[style name="test_bubbles"]
+derek: How do you know about that?
+derek: Hold on. How long were you watching me for before you stepped in?
+[style name="test_bubbles_right"]
+jenny: Oh! Not long, I swear!
+jenny: It's just that bots don't get violent very often, so unless you're really anti-Speaker and go out of your way to piss them off, they're not going to chase you like that.
+jenny: They only care about recording transgressions and ticking up point counters. Usually people don't even know they've been caught by one until they check their account and see new points added on. They rarely interact with people directly.
+jenny: And nobody ever stands up to them. At least not anymore.
+jenny: Uh... Sorry. I got sort of carried away there. What I'm saying is, I was surprised to see somebody with so many bots after them.
+jenny: I was so surprised I sort of froze up for a second.
+jenny: But I did come and save you! Right on time!
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- Barely.
+	[style name="test_bubbles_right"]
+	jenny: You could be a little more grateful, you know. A "thank you" would be nice!
+	[style name="test_bubbles"]
+	derek: ...
+	derek: ...thanks.
+	[style name="test_bubbles_right"]
+	jenny: Is it that hard to say for you? Hee hee.
+	jenny: Seriously, though, I haven't seen bots act like that in a long time.
+- Yeah. Any later and I would have been...
+	[style name="test_bubbles_right"]
+	jenny: I know. To have that many bots on you...
+jenny: You must have done something the Speaker really hates. And when somebody upsets the Speaker, they usually end up dead.
+[style name="test_bubbles"]
+derek: ...
+[style name="test_bubbles_right"]
+jenny: Oh... Sorry! I got too serious again...
+jenny: It could have been worse? If they'd sent the First Projector instead of a bunch of bots, you'd definitely be dead. Always look on the bright side, right?
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- Is this an appropriate time for that kind of motto?
+	[style name="test_bubbles_right"]
+	jenny: It's always a good time for positivity. Even more so in dark times.
+	jenny: You're a bit of a grump, aren't you?
+	[style name="test_bubbles"]
+	derek: Hmph.
+	[style name="test_bubbles_right"]
+	jenny: You're not really helping your case.
+- ...
+	[style name="test_bubbles_right"]
+	jenny: Not much of a talker, are you?
+	jenny: That's fine. I can talk enough for the both of us, hee hee!
+jenny: We don't have time to chat right now, though. We have to get somewhere safe.
+jenny: The streets are crawling with bots on a good day. With them pissed off and looking for you, it'll be ten times worse.
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- How do I know I can trust you?
+	[style name="test_bubbles_right"]
+	jenny: Do you seriously think I would narc? After I risked my butt saving you?
+	jenny: I'm offended! Do you even know who you're talking to right now?
+	[style name="test_bubbles"]
+	derek: Am I supposed to?
+	[style name="test_bubbles_right"]
+	jenny: I can never tell if you're serious or not. Listen well, keytar guy...
+- Why are you so willing to help me? Who are you?
+	[style name="test_bubbles_right"]
+	jenny: I am so glad you asked.
+jenny: You're looking at Jenny Marsh, leader and one and only member of the legendary revolutionary group the Flame Seekers!
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- Can it really be legendary if it's just you?
+	[style name="test_bubbles_right"]
+	jenny: Hey! There used to be dozens of us, all across the country!
+- That sounds vaguely familiar.
+	[style name="test_bubbles_right"]
+	jenny: Wow, really?
+	jenny: I mean, uh, yeah, obviously you've heard of us! It's been a decade since we've done anything big, but in our heyday even the Speaker himself knew our name!
+jenny: ...Uh, what about you?
+[style name="test_bubbles"]
+derek: What?
+[style name="test_bubbles_right"]
+jenny: Your name, silly. I can't keep calling you "keytar guy", can I?
+[style name="test_bubbles"]
+derek: Oh. Yeah.
+derek: It's Derek.
+[style name="test_bubbles_right"]
+jenny: Got a last name, Derek?
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- No.
+	[style name="test_bubbles_right"]
+	jenny: I doubt that, but... Okay, sure.
+- ...
+	[style name="test_bubbles_right"]
+	jenny: ...
+	[style name="test_bubbles"]
+	derek: ...
+	[style name="test_bubbles_right"]
+	jenny: ...Okaaay, don't tell me.
+jenny: We've got to get moving. The Flame Seeker's hideout isn't that far away. If we can get there, we should be safe, at least for a while. Long enough to figure out our next steps.
+jenny: As long as we can get past the bots.
+[style name="test_bubbles"]
+derek: You mean, we have to fight more of them?
+[style name="test_bubbles_right"]
+jenny: Don't look so down! As long as you remember everything I taught you, I know we can do this!
+jenny: Ready, Derek?
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- Ready as I'll ever be.
+	[style name="test_bubbles_right"]
+	jenny: At least you're somewhat positive...?
+- No.
+	[style name="test_bubbles_right"]
+	jenny: Well... Sorry, but I don't think you have a choice. You should've have done... whatever it is you did if you weren't ready for the consequences.
+jenny: Come on, let's get out of here! It's this way!

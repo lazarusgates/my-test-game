@@ -1,0 +1,36 @@
+[style name="test_bubbles_right"]
+join jenny right [animation="Slide In Right" wait="true" mirrored="true"]
+jenny: Hey! You!
+[style name="test_bubbles"]
+join derek left [animation="Slide In Left" wait="true"]
+derek: Um...  Me?
+[style name="test_bubbles_right"]
+jenny: Do you see anyone else here, silly?
+[style name="test_bubbles"]
+derek: ...
+[style name="test_bubbles_right"]
+jenny: Do you play?
+[style name="test_bubbles"]
+derek: ...What?
+[style name="test_bubbles_right"]
+jenny: You know how to play, right? Or is that thing on your back just for show?
+[style name="test_bubbles"]
+derek: Who carries around an instrument they can't play?
+[style name="test_bubbles_right"]
+jenny: Maybe I should specify. Do you know how to play in a fight?
+jenny: Because no offense, but you don't exactly look like the fighting type.
+- I've never fought anyone before. | [tutorial="true"]
+	jenny: Yeah, I kinda figured! Don't worry, I'll teach you everything I know.
+	jenny: And I'm an expert, so you're in good hands!
+	jump tutorial1/
+- Don't underestimate me. I'm battle ready.
+	jenny: You don't have to pretend you know just to look cool, you know.
+	jenny: I don't mind teaching you, so... Are you sure you're ready?
+	- I was lying. I need you to teach me. | [tutorial="true"]
+		jenny: Hee hee, I knew it. Has anybody ever told you you're a bad liar?
+		jenny: Don't worry, I'll gladly catch you up to speed. It'll be fun!
+		jenny: You'll be busting bots and kicking butt in no time with a teacher like me.
+		jump tutorial1/
+	- I'm not pretending. Let's beat these things. | [tutorial="false"]
+		jenny: Alright, but don't say I didn't warn you. These bots are no joke.
+		jenny: Show me what you got, keytar guy!

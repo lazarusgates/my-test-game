@@ -1,0 +1,5 @@
+join derek left
+join jenny right [mirrored="true"]
+[style name="test_bubbles_right"]
+jenny: Wow! You're a natural!
+jenny: Try doing it a few more times and take out the top bot.

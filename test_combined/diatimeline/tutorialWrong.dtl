@@ -1,0 +1,4 @@
+join derek left
+join jenny right [mirrored="true"]
+[style name="test_bubbles_right"]
+jenny: Hey, practice makes perfect, right? Keep trying until you get it right.

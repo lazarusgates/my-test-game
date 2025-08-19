@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3lnmy5jbgg1p"]
+
+[ext_resource type="Script" uid="uid://b6ntbgcfhv0tf" path="res://tutorial.gd" id="1_ehuit"]
+[ext_resource type="PackedScene" uid="uid://c2gx6r2p8uur3" path="res://scene files/overworld/tutorial_tile_map.tscn" id="1_yb1ct"]
+
+[node name="tutorial" type="Node2D"]
+script = ExtResource("1_ehuit")
+
+[node name="testTileMap" parent="." instance=ExtResource("1_yb1ct")]

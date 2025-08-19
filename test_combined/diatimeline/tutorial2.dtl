@@ -1,0 +1,35 @@
+join derek left
+join jenny right [mirrored="true"]
+if {realSong} == false:
+	[style name="test_bubbles_right"]
+	jenny: Uh. That was, um...
+	[style name="test_bubbles"]
+	derek: You said you wouldn't judge.
+	[style name="test_bubbles_right"]
+	jenny: I know, I know, but... I thought you said you'd at least played that thing before?
+	[style name="test_bubbles"]
+	derek: I have. I was just... nervous.
+	[style name="test_bubbles_right"]
+	jenny: Aww, that's okay. I get it. And even if it wasn't really a song, it still counts for something.
+	jenny: That "something" is what we call a fumble.
+elif {realSong} == true:
+	[style name="test_bubbles_right"]
+	jenny: Wow, you're a pro at this! And here you are saying you don't know how to battle.
+	jenny: You did great this time, but you'll probably mess up at some point in the future and hit the wrong notes.
+	jenny: When that happens, we call it a fumble.
+jenny: A fumble happens when you play something that doesn't match any known songs.
+jenny: Fumbles can do a teeny tiny amount of damage, but nowhere near as much as a real song, so you better practice to do the most amount of damage possible!
+jenny: Still, don't stress. Even if you get only fumbles, you'll still be able to knock out your opponents.
+jenny: ...Eventually.
+jenny: But there's no way you suck that much! ...Right?
+- No way. I'll be great at this.
+	jenny: Yeah! I like that confidence!
+- ...
+	jenny: I-It's okay! Don't let failure get you down! With practice, you'll get better.
+jenny: It'll be easier once you actually, y'know, learn a real song.
+jenny: I'll teach you one. It's just a basic pop song. Only four notes, not hard at all. Perfect for beginners.
+jenny: Watch this!
+[wait time="1.0"]
+jenny: That was a pretty simple song, so it doesn't deal a ton of damage, but it's a lot more than a fumble.
+jenny: More complex songs deal more damage. Some will also grant other effects, like healing or stat increases, but that's a bit much for a beginner like you! For now, we'll stick to attack songs.
+jenny: Why don't you try copying what I just played?

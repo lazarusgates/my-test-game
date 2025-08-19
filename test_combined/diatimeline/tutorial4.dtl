@@ -1,0 +1,29 @@
+join derek left
+join jenny right [mirrored="true"]
+[style name="test_bubbles_right"]
+jenny: That's one down. Nice job!
+[style name="test_bubbles"]
+derek: <Empty Text Event>
+- You too. Thanks for teaching me.
+	[style name="test_bubbles_right"]
+	jenny: Aww, you're welcome! We're not done yet, though. There's still one more.
+- That was too easy.
+	[style name="test_bubbles_right"]
+	jenny: Don't get ahead of yourself- there's still one more.
+jenny: I've got another lesson for you. Do you see that symbol next to the bot?
+jenny: That symbol represents the bot's "genre". Everything's got a genre- bots and people alike.
+jenny: The bot we attacked earlier was a Rock bot, but this one is a Noise bot. Can you see the difference?
+jenny: Just like bots, songs also have genres. The song I taught you earlier is in the Pop genre, of course.
+jenny: But watch what happens when we try to attack a Noise bot with a Pop song.
+[wait time="1.0"]
+jenny: See how it did less damage? That's because Pop is weak against Noise. This means hitting it with a Pop song is less effective.
+jenny: However, Noise is weak to Alt. I bet you can guess what that means.
+jenny: Here, listen to this.
+[wait time="1.1"]
+Noise bots take extra damage when hit with Alt songs!
+jenny: Each genre has its own strengths and weaknesses, so it's important you learn and practice songs from each of them.
+Go ahead and take out this last bot. I'll let you pick how to do it- by chipping it down slowly with the easy Pop attack, or trying for big damage with the more difficult Alt song.
+leave --All--
+(You might have trouble remembering every song, what they do, and how to play them.)
+(If you need a refresher during a battle, pick the "Songs" option on the menu. You can check how to play each song, their genre, and their effects.)
+(Then, when you're ready, return to the battle menu and pick "Attack" to try and play the song yourself.)

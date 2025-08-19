@@ -29,15 +29,24 @@ directories/dch_directory={
 "unknown": "res://diatimeline/unknown.dch"
 }
 directories/dtl_directory={
+"posttutorial": "res://diatimeline/posttutorial.dtl",
+"pretutorial": "res://diatimeline/pretutorial.dtl",
 "savestation": "res://diatimeline/savestation.dtl",
 "test": "res://diatimeline/test.dtl",
 "tutorial1": "res://diatimeline/tutorial1.dtl",
+"tutorial2": "res://diatimeline/tutorial2.dtl",
+"tutorial4": "res://diatimeline/tutorial4.dtl",
+"tutorialCorrectBasic": "res://diatimeline/tutorialCorrectBasic.dtl",
+"tutorialWrong": "res://diatimeline/tutorialWrong.dtl",
 "tvinteract": "res://diatimeline/tvinteract.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://diatimeline/test_bubbles.tres", "res://diatimeline/test_bubbles_right.tres"]
 layout/default_style="res://diatimeline/test_bubbles.tres"
-variables={}
+variables={
+"realSong": false,
+"tutorial": true
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -54,10 +63,13 @@ animations/cross_fade_default_length=0.5
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
-choices/reveal_by_input=false
+choices/reveal_by_input=true
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+choices/hotkey_behaviour=0
+text/split_at_new_lines=false
+text/autocolor_names=false
 
 [editor_plugins]
 

@@ -1,21 +1,22 @@
+join derek left
+join jenny right [mirrored="true"]
 [style name="test_bubbles_right"]
-join jenny right [animation="Slide In Right" wait="true" mirrored="true"]
-jenny: Hey! You!
+jenny: Let's start with the basics. That keytar you've got? It's essentially a piano on a stick. When you're playing it, pretend you're playing a normal piano.
 [style name="test_bubbles"]
-join derek left [animation="Slide In Left" wait="true"]
-derek: Um...  Me?
+derek: I think I know how to play my own instrument.
 [style name="test_bubbles_right"]
-jenny: Do you see anyone else here, silly?
+jenny: Touchy! I'm just making sure.
+leave --All--
+(Place your hands on the keyboard with your pointer fingers on G and H. Your pinkies should be on S and L.)
+(The eight keys your fingers are resting on represent the eight keys that make up a major C scale. For example, middle C corresponds to the S key on your keyboard, which you should play with your left pinkie.)
+(If that's confusing, it's okay! The piano keys are labelled with their corresponding keyboard keys. See?)
+[wait_input]
+(It might take a moment to get used to, but don't be discouraged- practice makes perfect!)
+join derek left
+join jenny right [mirrored="true"]
+jenny: If you already know how to play, go ahead and play something!
 [style name="test_bubbles"]
-derek: ...
+derek: Like what?
 [style name="test_bubbles_right"]
-jenny: Do you play?
-[style name="test_bubbles"]
-derek: ...What?
-[style name="test_bubbles_right"]
-jenny: You know how to play, right? Or is that thing on your back just for show?
-[style name="test_bubbles"]
-derek: Who carries around an instrument they can't play? Of course I know how.
-[style name="test_bubbles_right"]
-jenny: Maybe I should specify. Do you know how to play it in a battle?
-jenny: Because no offense, but you don't exactly look like the fighting type.
+jenny: Anything! It doesn't matter if it's bad. I won't judge.
+leave --All--

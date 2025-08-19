@@ -18,4 +18,4 @@ position = Vector2(82, 595)
 scale = Vector2(0.703225, 0.703225)
 
 [node name="walk_player" parent="." instance=ExtResource("2_l3c2u")]
-position = Vector2(57, 174)
+position = Vector2(49, 68)
